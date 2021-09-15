@@ -1,0 +1,47 @@
+version: "2.0"
+stories:
+- story: happy path 1 (/tmp/tmpckrhln5b/3357847ec4704c1e816a8163c4b138e1_test_stories.yml)
+  steps:
+  - intent: greet  # predicted: nlu_fallback: hello there!
+  - action: utter_greet  # predicted: action_carousels
+  - intent: mood_great  # predicted: deny: amazing
+  - action: utter_happy
+- story: happy path 2 (/tmp/tmpckrhln5b/3357847ec4704c1e816a8163c4b138e1_test_stories.yml)
+  steps:
+  - intent: greet  # predicted: nlu_fallback: hello there!
+  - action: utter_greet  # predicted: action_carousels
+  - intent: mood_great  # predicted: deny: amazing
+  - action: utter_happy
+  - intent: goodbye  # predicted: mood_great: bye-bye!
+  - action: utter_goodbye
+- story: sad path 1 (/tmp/tmpckrhln5b/3357847ec4704c1e816a8163c4b138e1_test_stories.yml)
+  steps:
+  - intent: greet  # predicted: mood_great: hello
+  - action: utter_greet  # predicted: action_carousels
+  - intent: mood_unhappy  # predicted: goodbye: not good
+  - action: utter_cheer_up
+  - action: utter_did_that_help  # predicted: action_default_fallback
+  - intent: affirm  # predicted: deny: yes
+  - action: utter_happy
+- story: sad path 2 (/tmp/tmpckrhln5b/3357847ec4704c1e816a8163c4b138e1_test_stories.yml)
+  steps:
+  - intent: greet  # predicted: mood_great: hello
+  - action: utter_greet  # predicted: action_carousels
+  - intent: mood_unhappy  # predicted: goodbye: not good
+  - action: utter_cheer_up
+  - action: utter_did_that_help  # predicted: action_default_fallback
+  - intent: deny  # predicted: goodbye: not really
+  - action: utter_goodbye  # predicted: action_default_fallback
+- story: sad path 3 (/tmp/tmpckrhln5b/3357847ec4704c1e816a8163c4b138e1_test_stories.yml)
+  steps:
+  - intent: greet  # predicted: mood_great: hi
+  - action: utter_greet  # predicted: action_carousels
+  - intent: mood_unhappy  # predicted: affirm: very terrible
+  - action: utter_cheer_up
+  - action: utter_did_that_help  # predicted: action_default_fallback
+  - intent: deny  # predicted: goodbye: no
+  - action: utter_goodbye  # predicted: action_default_fallback
+- story: say goodbye (/tmp/tmpckrhln5b/3357847ec4704c1e816a8163c4b138e1_test_stories.yml)
+  steps:
+  - intent: goodbye  # predicted: mood_great: bye-bye!
+  - action: utter_goodbye

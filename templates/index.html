@@ -2,7 +2,16 @@
 <html>
 <head>
 </head>
+  
 <body>
+  <style>
+      .rw-conversation-container .rw-header{background-color: blue;}
+      .rw-conversation-container .rw-messages-container .rw-message .rw-response{background-color: #f4f7f9;}
+      .rw-launcher{background-color: blue;}
+      .rw-conversation-container .rw-reply{background-color: hsl(250, 69%,61%);border: 1px solid}
+      .conversation-container .replies {display:block}
+  </style>
+      
     <script>!(function () {
   let e = document.createElement("script"),
     t = document.head || document.getElementsByTagName("head")[0];
@@ -15,6 +24,13 @@
         {
           customData: { language: "en" },
           socketUrl: "http://localhost:5005",
+          title: "Yusuf Bot",
+          subtitle: "Ceddy",
+          profileAvatar:"./static/botphoto.png",
+          openLauncherImage:"./static/chat.png",
+          closeImage:"./static/square.png",
+          showMessageDate: true,
+          storage:"local"
           // add other props here
         },
         null
@@ -22,6 +38,7 @@
     }),
     t.insertBefore(e, t.firstChild);
 })();
+localStorage.clear()
 </script>
 </body>
 </html>
