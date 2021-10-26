@@ -1,6 +1,6 @@
 version: '2'
 services:
-  rasa:
+  rasa-flask:
     image: rasa-chatbot:latest
     working_dir: /app
     build: "./"
