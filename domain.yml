@@ -1,45 +1,44 @@
-version: "2.0"
-
-intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
-  - restart
-
-responses:
-  utter_greet:
-  - text: "Hey! Nasılsın:"
-    buttons:
-      - title: "İyi"
-        payload: "/mood_great"
-      - title: "Kötü"
-        payload: "/mood_unhappy"
-
-  utter_cheer_up:
-  - text: "İşte neşelenmen için bir fotoğraf:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Yardımcı oldu mu?"
-
-  utter_happy:
-  - text: "Harika, böyle devam!"
-
-  utter_goodbye:
-  - text: "Bay"
-
-  utter_iamabot:
-  - text: "Ben Yusuf Bot."
-
-actions:
-  - action_start_session
-  - action_carousels
-  - action_restart
-
+version: '2.0'
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+intents:
+- mood_great
+- greet
+- goodbye
+- affirm
+- deny
+- mood_unhappy
+- bot_challenge
+- work_time
+- retail
+- delivery
+- contact
+- shop
+responses:
+  utter_greet:
+  - text: 'Hey! Nasıl yardımcı olabilirim?'
+  utter_cheer_up:
+  - text: 'İşte neşelenmen için bir fotoğraf:'
+    image: https://i.imgur.com/nGF1K8f.jpg
+  utter_did_that_help:
+  - text: Yardımcı oldu mu?
+  utter_happy:
+  - text: Harika, böyle devam!
+  utter_goodbye:
+  - text: Bay
+  utter_work_time:
+  - text: Hafta içi her gün 9:00-18:00 arası hizmet vermekteyiz.
+  utter_retail:
+  - text: Toptan ve parekende olarak satışlarımızı gerçekleştirmekteyiz.
+  utter_delivery:
+  - text: Siparişlerinizin büyüklüğüne göre değişmekle beraber en geç 2 hafta içerisinde teslim edilmektedir.
+  utter_contact:
+  - text: Bize akygomlek@gmail.com mail adresimizden veya 1231231234 telefon numarasından ulaşabilirsiniz.
+  utter_shop:
+  - text: 19 mayıs mahallesi. Hrant Dink sokak bele han. no90/c osmanbey/istanbul adresine mağazamızı bulabilirsiniz.
+actions:
+- action_restart
+- action_start_session
+- utter_greet
+- utter_happy

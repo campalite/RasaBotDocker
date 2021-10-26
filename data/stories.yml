@@ -2,40 +2,36 @@ version: "2.0"
 
 stories:
 
-- story: happy path
+- story: work time path
   steps:
   - intent: greet
-  - action: action_carousels
+  - action: utter_greet
   - intent: mood_great
   - action: utter_happy
 
-- story: sad path 1
+- story: work_time path
   steps:
-  - intent: greet
-  - action: action_carousels
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
+  - intent: work_time
+  - action: utter_work_time
 
-- story: sad path 2
+- story: retail path
   steps:
-  - intent: greet
-  - action: action_carousels
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
+  - intent: retail
+  - action: utter_retail
 
-- story: carousel
+- story: delivery
   steps:
-  - intent: greet
-  - action: action_carousels
+  - intent: delivery
+  - action: utter_delivery
 
-
-- story: restart
+- story: contact path
   steps:
-    - intent: restart
-    - action: action_restart
+  - intent: contact
+  - action: utter_contact
+
+- story: shop path
+  steps:
+  - intent: shop
+  - action: utter_shop
+
+

@@ -1,0 +1,7 @@
+2021-10-18 17:58:40,719 [INFO ]  Starting Rasa server on http://localhost:12346
+2021-10-18 17:58:40,729 [INFO ]  Loading model models/nlu-20211016-122813.tar.gz...
+2021-10-18 17:58:53,940 [INFO ]  Rasa server is up and running.
+2021-10-18 18:00:07,237 [ERROR]  User is not authenticated.
+2021-10-18 18:00:30,726 [ERROR]  User is not authenticated.
+2021-10-18 18:01:54,835 [ERROR]  User is not authenticated.
+2021-10-18 18:02:10,948 [ERROR]  No text message defined in request_body. Add text message to request body in order to obtain the intent and extracted entities.

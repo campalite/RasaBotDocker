@@ -1,5 +1,4 @@
 version: "2.0"
-
 nlu:
 - intent: greet
   examples: |
@@ -9,8 +8,6 @@ nlu:
     - slm
     - başla
     - hadi
-   
-   
 - intent: goodbye
   examples: |
     - sağol
@@ -19,8 +16,7 @@ nlu:
     - sonra görüşürüz
     - good night
     - bay
-
-
+    - bay bay
 - intent: affirm
   examples: |
     - evet
@@ -29,18 +25,12 @@ nlu:
     - tamam
     - tabiki
     - kesinlikle
-   
-
 - intent: deny
   examples: |
     - hayır
     - asla
     - olamaz
     - kabul etmiyorum
-
-    
-
-
 - intent: mood_great
   examples: |
     - harika
@@ -50,10 +40,6 @@ nlu:
     - çok iyi
     - iyi
     - güzel
-
-  
-
-
 - intent: mood_unhappy
   examples: |
     - günüm çok kötüydü
@@ -62,16 +48,12 @@ nlu:
     - üzgün
     - kötü
     - mutsuz
-
-
 - intent: bot_challenge
   examples: |
     - sen bot musun?
     - sen insan mısın?
     - botla mı konuşuyorum?
     - insanla mı konuşuyorum?
-
-
 - intent: restart
   examples: |
     - yeniden başla
@@ -79,5 +61,33 @@ nlu:
     - sıfırla
     - baştan başla
     - bitir
-  
+- intent: work_time
+  examples: |
+    - çalışma saatleriniz nedir?
+    - kaç kaç çalışıyorsunuz?
+    - saat kaça kadar açıksınız?
+    - haftasonu çalışıyor musunuz?
+- intent: retail
+  examples: |
+    - parakende satış yapıyor musunuz?
+    - toptan satış yapıyor musunuz?
+    - toplu alım yapabilir miyim?
 
+- intent: delivery
+  examples: |
+    - siparişim kaç günde teslim olur?
+    - yurtdışına sipariş süresi ne kadar?
+    - bir haftaya teslimat olur mu?
+
+- intent: contact
+  examples: |
+    - telefon numaranız nedir?
+    - size nasıl ulaşabilirim?
+    - iletişim için numara alabilir miyim?
+
+- intent: shop
+  examples: |
+    - mağazanız nerede?
+    - ürünleri nerede görebilirim?
+    - başka bir yeriniz var mı?
+    - dükkanınız nerede?

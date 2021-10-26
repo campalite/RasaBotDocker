@@ -1,22 +1,36 @@
 version: '2'
 services:
-  rasa-flask:
+  rasa:
     image: rasa-chatbot:latest
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: rasa-chat-app
-    volumes: 
-      - .:/rasa_app
+    working_dir: /app
+    build: "./"
+    restart: always
+    volumes:
+    - ./actions:/app/actions
+    - ./data:/app/data
+    - ./models:/app/models
+    - ./templates:/app/templates
+    command: bash -c "rm -rf models/* && rasa train && rasa run --enable-api --cors \"*\" --debug"
+    ports: '5005:5005'
+    networks:
+    - all
+
+
+  rasa-actions:
+    image: rasa-chatbot:latest
+    working_dir: /app
+    build: "./"
+    restart: always
+    volumes:
+    - ./actions:/app/actions
     ports:
-      - 5000:5000
-    command: python3 app.py
-  rasa-server:
-    image: rasa/rasa:2.1.2-full
-    container_name: rasa-chatbot-server
-    volumes: 
-      - .:/app
-    ports:
-      - 5005:5005
-    command: run -m models --enable-api --cors "*"
+    - '5055:5055'
+    networks:
+    - all
+
+networks:
+  all:
+    driver: bridge
+    driver_opts:
+      com.docker.network.enable_ipv6: "true"
     
