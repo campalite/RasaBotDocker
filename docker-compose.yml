@@ -12,7 +12,7 @@ services:
     - ./templates:/app/templates
     command: bash -c "rm -rf models/* && rasa train && rasa run --enable-api --cors \"*\" --debug"
     ports:
-    - 5005:5005
+    - '5005:5005'
     networks:
     - all
 
